@@ -1,0 +1,259 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #eee9e2;
+    font-family: Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+}
+
+
+.header {
+    background-color: #263b46;
+    color: white;
+    padding: 35px 20px;
+}
+
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+.header p{
+    font-size: 17px;
+}
+
+
+.main {
+    padding: 30px 20px;
+}
+
+
+.main h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+
+.main p {
+    line-height: 1.6;
+}
+
+
+.city-selection {
+    margin: 25px 0;
+}
+
+
+.city-selection select {
+    padding: 12px;
+    width: 220px;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid #83959b;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+.room {
+    background-color: #d5c9ba;
+    width: 90%;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 35px 0;
+    border: 8px solid #b9aa98;
+    box-sizing: border-box;
+}
+
+
+
+
+.window {
+    position: relative;
+    width: 80%;
+    height: 350px;
+    margin: auto;
+    overflow: hidden;
+    border: 12px solid #f4f0e9;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px #999999;
+}
+
+
+#city-view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #a9c7d8;
+    background-size: cover;
+    background-position: center;
+}
+
+
+#haze {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #928b80;
+    opacity: 0.4;
+    transition: opacity 2s, background-color 2s;
+}
+
+
+
+
+.window-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: 6px solid #f4f0e9;
+    border-right: 6px solid #f4f0e9;
+    pointer-events: none;
+}
+
+
+
+
+.window-frame::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #f4f0e9;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+
+.window-frame::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: #f4f0e9;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.interaction {
+    margin: 25px 0;
+}
+
+
+#wipe-btn {
+    background-color: #263b46;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+#wipe-btn:hover {
+    background-color: #496573;
+}
+
+
+
+
+.air-quality-info {
+    background-color: white;
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+
+.air-quality-info h3 {
+    font-size: 23px;
+    color: #263b46;
+}
+
+
+#aqi-value {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+#air-quality-message {
+    font-style: italic;
+}
+
+
+
+
+.about {
+    background-color: #dcd5cc;
+    padding: 30px 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+
+.about h2 {
+    color: #263b46;
+}
+
+
+.footer {
+    background-color: #263b46;
+    color: white;
+    padding: 20px;
+    font-size: 14px;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+
+    .main h2 {
+        font-size: 22px;
+    }
+
+
+    .room {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+
+    .window {
+        width: 90%;
+        height: 250px;
+        border-width: 7px;
+    }
+
+
+    .city-selection select {
+        width: 90%;
+    }
+
+
+    .air-quality-info {
+        width: 95%;
+    }
+}
+
