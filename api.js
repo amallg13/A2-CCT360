@@ -1,5 +1,16 @@
 
 // Open-Meteo Air Quality API Integration
+// City background images
+const cityImages = {
+    "toronto": "images/toronto.jpg",
+    "los-angeles": "images/los-angeles.jpg",
+    "new-delhi": "images/new-delhi.jpg"
+};
+
+function changeCityImage(cityKey) {
+    cityView.style.backgroundImage =
+        `url("${cityImages[cityKey]}")`;
+}
 
 // Store the coordinates of each city
 const cities = {
@@ -64,7 +75,6 @@ function showError() {
     haze.classList.remove(
         "low", "moderate", "high", "very-high", "wiped"
     );
-    haze.style.opacity = "0.4";
 }
 
 // Determine the air quality category
@@ -158,7 +168,14 @@ async function updateAirQuality(cityKey) {
 
     const requestID = ++latestRequest;
 
+    if (window.resetWipe) {
+    window.resetWipe();
+    }
+
+    changeCityImage(cityKey);
+
     showLoading();
+   
 
     try {
         const url =
