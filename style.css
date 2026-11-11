@@ -191,10 +191,21 @@ body {
 
 /* Temporary clear window */
 #haze.wiped {
-    opacity: 0.02;
-    backdrop-filter: blur(0px);
+    opacity: 0 !important;
+    backdrop-filter: blur(0px) !important;
+    -webkit-backdrop-filter: blur(0px) !important;
 }
 
+#haze.wiped::before,
+#haze.wiped::after {
+    opacity: 0;
+    animation: none;
+}
+
+#wipe-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 
 .window-frame {
     position: absolute;
@@ -448,4 +459,3 @@ body[data-aqi-level="very-unhealthy"] #aqi-value {
 body[data-aqi-level="hazardous"] #aqi-value {
     color: #873b3b;
 }
-
